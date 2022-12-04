@@ -14,7 +14,7 @@ function App() {
       ) : (
         <Header setEdited={setEdited} />
       )}
-      {pending && <p className="loading">loading...</p>}
+      {pending && <p className="loading">loading.</p>}
       {!edited && error && (
         <p className="error">Error when fetching data from server !!!</p>
       )}
