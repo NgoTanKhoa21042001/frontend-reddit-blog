@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import "./App.css";
+import { Header, EditPage } from "./Components/index";
 
 function App() {
+  const [edited, setEdited] = useState(false);
+  const pending = useSelector((state) => state.user.pending);
+  const error = useSelector((state) => state.user.error);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {edited ? (
+        <EditPage setEdited={setEdited} />
+      ) : (
+        <Header setEdited={setEdited} />
+      )}
+      {pending && <p className="loading">loading...</p>}
+      {!edited && error && (
+        <p className="error">Error when fetching data from server !!!</p>
+      )}
     </div>
   );
 }
