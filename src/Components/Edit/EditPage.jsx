@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Input from "../InputFields/Input";
 import "./Edit.css";
-import { update } from "../../redux/userSlice";
 import { updateUser } from "../../redux/apiRequest";
 const EditPage = (props) => {
   const { setEdited } = props;
