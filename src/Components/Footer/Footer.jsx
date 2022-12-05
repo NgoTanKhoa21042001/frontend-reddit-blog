@@ -1,7 +1,16 @@
 import React from "react";
 import "./Footer.css";
-const Footer = () => {
-  return <div>This is a footer page</div>;
+const Footer = ({ isOpenPost, setOpen }) => {
+  const handleClick = () => {
+    setOpen(!isOpenPost);
+  };
+  return (
+    <footer className="footer-container">
+      <div className="footer-plus" onClick={handleClick}>
+        {isOpenPost ? "x" : "+"}
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
