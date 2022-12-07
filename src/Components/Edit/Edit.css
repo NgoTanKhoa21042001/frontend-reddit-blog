@@ -44,7 +44,6 @@
 .input-image-container {
   flex-wrap: wrap;
   display: flex;
-  gap: 6px;
 }
 
 label:nth-child(7) {
@@ -67,7 +66,7 @@ label:nth-child(7) {
 .theme-container {
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4.6rem;
 }
 
 .theme-container > label {
